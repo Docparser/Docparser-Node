@@ -1,0 +1,11 @@
+{
+  "name": "docparser-node-example",
+  "version": "0.0.1",
+  "dependencies": {
+    "chokidar": "^1.7.0",
+    "docparser-node": "*"
+  },
+  "scripts": {
+    "start": "index.js"
+  }
+}
