@@ -8,18 +8,15 @@ function Client (authToken) {
   }
 
   var parseJson = function (body, response, resolveWithFullResponse) {
-    if (response.headers['content-type'] === 'application/json') {
       return JSON.parse(body)
-    } else {
-      return body
-    }
   }
 
   this.httpClient = rp.defaults({
     headers: {
       'api_key': authToken
     },
-    transform: parseJson
+    transform: parseJson,
+    transform2xxOnly: true
   })
 
   // api methods
