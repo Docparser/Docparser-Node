@@ -81,13 +81,14 @@ client.getParsers()
 
 ### [Documents](https://dev.docparser.com/#documents)
 
-The Docparser JavaScript SDK offers three different methods for importing your document.
+The Docparser JavaScript SDK offers two different methods for importing your document.
 
 All import methods allow you to pass an optional `remote_id` with your document. The remote ID can be any arbitrary string with a maximum length of 255 characters. The submitted value will be kept throughout the processing and will be available later once you obtain the parsed data with our API or through Webhooks. The `remote_id` can be passed in the `options` object to our upload methods.
 
 **Upload Document From Local File System**
 
-Uploads a document from your local filesystem.
+Reads a file from your local filesystem and uploads it to your document parser.
+
 ```js
 client.uploadFileByPath('someparserid', './test.pdf', {remote_id: 'test'})
   .then(function (result) {

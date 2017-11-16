@@ -1,7 +1,7 @@
 {
   "name": "docparser-node",
   "version": "1.0.0",
-  "description": "Convenient JavaScript bindings to Docparser",
+  "description": "Docparser API Node Client",
   "main": "index.js",
   "scripts": {
     "test": "standard"
