@@ -1,0 +1,24 @@
+{
+  "name": "docparser-node",
+  "version": "1.0.0",
+  "description": "Convenient JavaScript bindings to Docparser",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard"
+  },
+  "keywords": [
+    "pdf",
+    "parsing",
+    "pdf",
+    "docparser"
+  ],
+  "author": "Docparser",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "standard": "*"
+  }
+}
