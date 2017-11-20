@@ -1,6 +1,6 @@
 {
   "name": "docparser-node",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Docparser API Node Client",
   "main": "index.js",
   "scripts": {
