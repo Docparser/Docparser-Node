@@ -102,6 +102,7 @@ client.uploadFileByPath('someparserid', './test.pdf', {remote_id: 'test'})
 ```
 
 **Upload Document From A Readable Stream**
+
 Uploads a document, taking the bytes from a readable stream. 
 ```js
 client.uploadFileByPath('someparserid', fs.createReadStream('filepath'), {})
