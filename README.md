@@ -169,7 +169,7 @@ client.getResultsByParser(parserId, {format: 'object'})
 
 ## Contributing
 
-Bug reports and pull requests are welcome on [GitHub](https://github.com/docparser/docparser-js).
+Bug reports and pull requests are welcome on [GitHub](https://github.com/docparser/docparser-node).
 
 Please follow [Standard Code Style](https://github.com/standard/standard)  with your contributions. You can check for code style by running ```npm test``` when developing this library.
 
