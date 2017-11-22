@@ -85,6 +85,8 @@ The Docparser JavaScript SDK offers two different methods for importing your doc
 
 All import methods allow you to pass an optional `remote_id` with your document. The remote ID can be any arbitrary string with a maximum length of 255 characters. The submitted value will be kept throughout the processing and will be available later once you obtain the parsed data with our API or through Webhooks. The `remote_id` can be passed in the `options` object to our upload methods.
 
+The upload methods (`uploadByPath`, `uploadByStream`) allow you to override the filename by specifying the `filename` parameter in `options`.
+
 **Upload Document From Local File System**
 
 Reads a file from your local filesystem and uploads it to your document parser.
@@ -96,6 +98,18 @@ client.uploadFileByPath('someparserid', './test.pdf', {remote_id: 'test'})
   })
   .catch(function (err) {
     console.log(err)
+  })
+```
+
+**Upload Document From A Readable Stream**
+Uploads a document, taking the bytes from a readable stream. 
+```js
+client.uploadFileByPath('someparserid', fs.createReadStream('filepath'), {})
+  .then(function(result) {
+      // => {"id":"document_id","file_size":192182,"quota_used":17,"quota_left":33,"quota_refill":"1970-01-01T00:00:00+00:00"}
+  })
+  .catch(function(err) {
+  
   })
 ```
 
