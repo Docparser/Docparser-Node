@@ -36,7 +36,7 @@ This library is available from [npm](https://www.npmjs.com/).
 
 
 ```sh
-npm install docparser/docparser-node
+npm install docparser-node
 ```
 
 ## Configuration
@@ -44,7 +44,7 @@ npm install docparser/docparser-node
 Create a Docparser JavaScript Client by using your Docparser API Token:
 
 ```js
-var docparser = require('./docparser-node/');
+var docparser = require('docparser-node');
 
 var client = new docparser.Client("validAPIKey");
 ```
