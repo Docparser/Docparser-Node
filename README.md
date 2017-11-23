@@ -99,6 +99,20 @@ client.uploadFileByPath('someparserid', './test.pdf', {remote_id: 'test'})
   })
 ```
 
+**Upload Document By Providing File Content**
+
+This method creates a new document in your document parser based on the raw file content or a file pointer. Additionally, a `filename` and a `remote_id` can be provided in the options object.
+
+```js
+client.uploadFileByStream('someparserid', stream, options)
+  .then(function (result) {
+    // => {"id":"document_id","file_size":198989,"quota_used":16,"quota_left":34,"quota_refill":"1970-01-01T00:00:00+00:00"}
+  })
+  .catch(function (err) {
+    console.log(err)
+  })
+```
+
 **Fetch Document From An URL**
 
 Imports a document from a publicly available HTTP(S) URL.
@@ -120,32 +134,28 @@ Both methods used for retrieving parsed data allow you to specify the "format" p
 
 > Please note: Polling the API for new results is not the recommended way of obtaining your data. A much better way than polling our API for parsed data is to use [Webhooks](https://docparser.com/integration/webhooks). By using webhooks, parsed data will be pushed to your API immediately after parsing.
 
-**Get Data By Document ID**
+**Get Data Of One Document**
 
 Fetches the parsed data for a specific document by providing a `parserId` and the `documentId`. The `documentId` is the Docparser Document ID which is returned when importing a document through the API.
 
 ```js
 client.getResultsByDocument(parserId, documentId, {format: 'object'})
-  .then(function (parsers) {
-    console.log(parsers)
-    // =>
-
+  .then(function (results) {
+    console.log(results)
   })
   .catch(function (err) {
     console.log(err)
   })
 ```
 
-**List Data Of Multiple Documents**
+**Get Data Of Multiple Documents**
 
 Fetches the results of multiple documents parsed by a specific document parser. This function allows you granular filtering and ordering of the results. Please see our [documentation](https://dev.docparser.com/?shell#get-multiple-data-sets) for the list of available parameters.
 
 ```js
 client.getResultsByParser(parserId, {format: 'object'})
-  .then(function (parsers) {
-    console.log(parsers)
-    // =>
-
+  .then(function (results) {
+    console.log(results)
   })
   .catch(function (err) {
     console.log(err)
