@@ -85,6 +85,8 @@ The Docparser JavaScript SDK offers two different methods for importing your doc
 
 All import methods allow you to pass an optional `remote_id` with your document. The remote ID can be any arbitrary string with a maximum length of 255 characters. The submitted value will be kept throughout the processing and will be available later once you obtain the parsed data with our API or through Webhooks. The `remote_id` can be passed in the `options` object to our upload methods.
 
+The upload methods (`uploadByPath`, `uploadByStream`) allow you to override the filename by specifying the `filename` parameter in `options`.
+
 **Upload Document From Local File System**
 
 Reads a file from your local filesystem and uploads it to your document parser.
@@ -99,12 +101,12 @@ client.uploadFileByPath('someparserid', './test.pdf', {remote_id: 'test'})
   })
 ```
 
-**Upload Document By Providing File Content**
+**Upload Document From A Readable Stream**
 
 This method creates a new document in your document parser based on the raw file content or a file pointer. Additionally, a `filename` and a `remote_id` can be provided in the options object.
 
 ```js
-client.uploadFileByStream('someparserid', stream, options)
+client.uploadFileByStream('someparserid', fs.createReadStream('filepath'), options)
   .then(function (result) {
     // => {"id":"document_id","file_size":198989,"quota_used":16,"quota_left":34,"quota_refill":"1970-01-01T00:00:00+00:00"}
   })
@@ -140,8 +142,8 @@ Fetches the parsed data for a specific document by providing a `parserId` and th
 
 ```js
 client.getResultsByDocument(parserId, documentId, {format: 'object'})
-  .then(function (results) {
-    console.log(results)
+  .then(function (result) {
+    console.log(result)
   })
   .catch(function (err) {
     console.log(err)
@@ -154,8 +156,8 @@ Fetches the results of multiple documents parsed by a specific document parser. 
 
 ```js
 client.getResultsByParser(parserId, {format: 'object'})
-  .then(function (results) {
-    console.log(results)
+  .then(function (result) {
+    console.log(result)
   })
   .catch(function (err) {
     console.log(err)
@@ -164,7 +166,7 @@ client.getResultsByParser(parserId, {format: 'object'})
 
 ## Contributing
 
-Bug reports and pull requests are welcome on [GitHub](https://github.com/docparser/docparser-js).
+Bug reports and pull requests are welcome on [GitHub](https://github.com/docparser/docparser-node).
 
 Please follow [Standard Code Style](https://github.com/standard/standard)  with your contributions. You can check for code style by running ```npm test``` when developing this library.
 
