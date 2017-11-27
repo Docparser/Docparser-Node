@@ -4,7 +4,7 @@
 
 <h2 align="center">Official Docparser API JS Client</h2>
 
-<p align="center"><code>docparser-js</code> provides convenient JavaScript bindings for the <a href="https://dev.docparser.com">Docparser API</a>.</p>
+<p align="center"><code>docparser-node</code> provides convenient JavaScript bindings for the <a href="https://dev.docparser.com">Docparser API</a>.</p>
 
 <hr>
 
