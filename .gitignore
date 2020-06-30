@@ -3,3 +3,4 @@ node_modules
 .idea
 .editorconfig
 .DS_Store
+nbproject

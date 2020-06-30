@@ -28,6 +28,10 @@ function Client (authToken) {
     return this.httpClient.get(generateUrl('parsers'))
   }
 
+  this.getParserModelLayouts = function (parserId) {
+    return this.httpClient.get(generateUrl('parser/models/' + parserId));
+  }
+
   this.fetchDocumentFromURL = function (parserId, remoteURL, options) {
     var endpoint = generateUrl('document/fetch/' + parserId)
     var request = {
